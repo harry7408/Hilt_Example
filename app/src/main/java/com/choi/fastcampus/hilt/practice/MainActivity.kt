@@ -1,6 +1,8 @@
 package com.choi.fastcampus.hilt.practice
 
+import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,8 +22,14 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var example: Example
 
+    // Default Binding 확인하기 위함
+    @Inject
+    lateinit var app: Application
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Singleton 컴포넌트는 기본적으로 Application을 제공
+        Log.e("MainActivity","app=${app}")
         setContent {
             PracticeTheme {
                 // A surface container using the 'background' color from the theme
