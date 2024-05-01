@@ -1,4 +1,4 @@
-package com.choi.fastcampus.hilt.practice.ui.theme
+package com.choi.fastcampus.hilt.practice
 
 import javax.inject.Inject
 
